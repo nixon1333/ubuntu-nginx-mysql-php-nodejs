@@ -1,5 +1,6 @@
 FROM ubuntu:14.04
 MAINTAINER Emerson Estrella <emerson.estrella@gmail.com>
+LABEL maintainer="nixon613@gmail.com"
 
 RUN DEBIAN_FRONTEND=noninteractive
 
@@ -23,8 +24,8 @@ RUN php5enmod redis
 # Node
 RUN mkdir -p /tmp/node
 WORKDIR /tmp/node
-ENV NODE_VERSION 0.10.35
-ENV NPM_VERSION 2.2.0
+ENV NODE_VERSION 6.0.0
+ENV NPM_VERSION 4.1.2
 RUN curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.gz" \
     && tar -xzf "node-v$NODE_VERSION-linux-x64.tar.gz" -C /usr/local --strip-components=1 \
     && rm "node-v$NODE_VERSION-linux-x64.tar.gz" \
